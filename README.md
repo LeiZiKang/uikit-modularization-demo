@@ -1,50 +1,27 @@
-# UIKit modularization demo
+# Modular product detail demo
 
-A small iOS 17+ project that backs the article
-[Splitting an old UIKit project into modules](https://levi-blog.pages.dev/blog/uikit-modularization-en/).
-It shows three dependency lines and checks one page in five states.
+A fictional Canvas Tote page demonstrating three boundaries:
 
-- **Components**: `BadgeLabel` takes only a `Configuration` (text and color). It knows nothing about the API.
-- **DataModel**: `ItemDTO` keeps the API meaning; `ItemViewModel` turns it into display text.
-- **DevTools**: a small facade that registers mocks (DEBUG only) and shows alerts through one entry. The mock and alert here are in-memory stand-ins, not real tool packages.
-- **App**: `ItemViewController` takes an `ItemAPI`. `FixtureItemAPI` returns one of five scenes: success, empty, loading, 401, 500.
-
-```text
-App -> Components
-App -> DataModel
-App -> DevTools
-(Components, DataModel and DevTools do not depend on each other)
-```
-
-All three packages are local Swift Packages, so nothing is downloaded. The point is the dependency direction, not the package manager.
+1. **Nested components:** parent `Content` values contain child `Content` values, passed down through `configure(with:)`.
+2. **ViewModel:** an injected in-memory fixture supplies data; the ViewModel maps stock status into display content and reports changes through one callback.
+3. **Package:** the app imports the local `ProductUI` library and uses its public API; child views and layout helpers stay hidden inside the package.
 
 ## Run
 
-Open `ModularDemo.xcodeproj`, pick the `ModularDemo` scheme and an iOS 17+ simulator. Launch argument `-scene empty|loading|401|500` selects another fixture (default is success).
-The five `#Preview`s are at the bottom of `App/ItemViewController.swift`.
+Run `xcodegen generate`, open `ModularDemo.xcodeproj`, select the `ModularDemo` scheme, and run on an iOS 17+ simulator. The project uses Swift 5 mode and Auto Layout, with no external dependencies or network requests.
 
-```sh
-xcodebuild test -project ModularDemo.xcodeproj -scheme ModularDemo \
-  -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
-```
+Set launch arguments to `-scene inStock|soldOut|outOfStock|restocking|apiError` (choose one; default: `inStock`). Five separate full-screen previews are in `App/ProductDetailViewController.swift`; each component also has previews. The `apiError` scene automatically simulates one failed purchase after appearing and presents an alert.
 
-## What was checked
+## Screenshots
 
-- Build and 5 XCTest cases (one per state) pass on an iOS Simulator.
-- The five `#Preview`s render in Xcode's canvas through Xcode's RenderPreview.
+Screenshot destinations below are pending capture; no screenshots are included yet.
 
-| State | App in Simulator | Xcode canvas |
-| --- | --- | --- |
-| Success | `docs/screenshots/01-success.png` | `docs/screenshots/canvas-01-success.png` |
-| Empty | `docs/screenshots/02-empty.png` | `docs/screenshots/canvas-02-empty.png` |
-| Loading | `docs/screenshots/03-loading.png` | `docs/screenshots/canvas-03-loading.png` |
-| 401 | `docs/screenshots/04-unauthorized.png` | `docs/screenshots/canvas-04-401.png` |
-| 500 | `docs/screenshots/05-serverError.png` | `docs/screenshots/canvas-05-500.png` |
+| State | Screenshot |
+| --- | --- |
+| In Stock | ![In Stock](docs/screenshots/01-in-stock.png) |
+| Sold Out | ![Sold Out](docs/screenshots/02-sold-out.png) |
+| Out of Stock | ![Out of Stock](docs/screenshots/03-out-of-stock.png) |
+| Restocking | ![Restocking](docs/screenshots/04-restocking.png) |
+| API Error | ![API Error](docs/screenshots/05-api-error.png) |
 
-## What this does not check
-
-It does not exercise URLProtocol interception or a real network path. The fixtures are in memory, so they test copy, layout and state branches only.
-
-One gotcha found while rendering previews: `while true { ... }` in the Loading fixture breaks Xcode Preview, because Preview rewrites `true` and the compiler can no longer see the loop never exits (`missing return`). The fixture loops on `!Task.isCancelled` and throws `CancellationError()` afterwards.
-
-MIT licensed.
+This is a simplified example, not production code.

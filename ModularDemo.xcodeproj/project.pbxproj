@@ -7,33 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		174D73B2273C78A0468589A4 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 0980B7DE1D16896BC3E83478 /* Components */; };
-		2580C23A5E2499F964766460 /* ItemStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA03C9744EF2FFEBABA527E /* ItemStateTests.swift */; };
+		174D73B2273C78A0468589A4 /* ProductUI in Frameworks */ = {isa = PBXBuildFile; productRef = E4E04A82F6F37BF347F0B7EE /* ProductUI */; };
+		2164C9AFF3A58BE9585734DC /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76690AB45589E8E468116759 /* ProductDetailViewModel.swift */; };
 		5D7EB4341448543556BE122A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6978F949E3A48B3D3FB41BFD /* AppDelegate.swift */; };
-		80320FF4862C4CF140865335 /* DevTools in Frameworks */ = {isa = PBXBuildFile; productRef = BB042CFCE7916693FFD7CDB5 /* DevTools */; };
-		9FC5C25DB76DE1CBD12BC851 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A39B1F7DC88D18CB1C44B /* ItemViewController.swift */; };
-		C3044AB64F848F16302EE56A /* DataModel in Frameworks */ = {isa = PBXBuildFile; productRef = CF753411646B8E5DF917671B /* DataModel */; };
+		911B5F20DE1E186FEC002A01 /* ProductFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C432D131525F5B8BD998FC /* ProductFixture.swift */; };
+		CD86F9987F77914197A90CD2 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069110753A2DC0C1F3DA76B /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		25F9A56F1936AF5F3E62E41B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 12334B9A347130484EC7B87B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EBBFD98614503C1A61220D28;
-			remoteInfo = ModularDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		423888ED6DFF2D12C25C3FB0 /* ModularDemoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ModularDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31C432D131525F5B8BD998FC /* ProductFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFixture.swift; sourceTree = "<group>"; };
+		55B246728473080A5C6FD0FC /* ProductUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ProductUI; path = Packages/ProductUI; sourceTree = SOURCE_ROOT; };
+		6069110753A2DC0C1F3DA76B /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		6978F949E3A48B3D3FB41BFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		721A2147BA3D929D41FFDE5D /* DevTools */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DevTools; path = Packages/DevTools; sourceTree = SOURCE_ROOT; };
-		9AA03C9744EF2FFEBABA527E /* ItemStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStateTests.swift; sourceTree = "<group>"; };
-		BD1A39B1F7DC88D18CB1C44B /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		76690AB45589E8E468116759 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		E94304F02BECF99704D151B0 /* ModularDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ModularDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F213A362C60DE208A3867F82 /* Components */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Components; path = Packages/Components; sourceTree = SOURCE_ROOT; };
-		FFC31A50D0C2E08F4133783C /* DataModel */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataModel; path = Packages/DataModel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174D73B2273C78A0468589A4 /* Components in Frameworks */,
-				C3044AB64F848F16302EE56A /* DataModel in Frameworks */,
-				80320FF4862C4CF140865335 /* DevTools in Frameworks */,
+				174D73B2273C78A0468589A4 /* ProductUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +40,6 @@
 			children = (
 				DA428E855F2DF24F49C8BF19 /* App */,
 				9DE0EDA01B82E0035D876B7C /* Packages */,
-				B7D2B627E370F724084A1796 /* Tests */,
 				E952130B084F821DE4F435C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,26 +47,18 @@
 		9DE0EDA01B82E0035D876B7C /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				F213A362C60DE208A3867F82 /* Components */,
-				FFC31A50D0C2E08F4133783C /* DataModel */,
-				721A2147BA3D929D41FFDE5D /* DevTools */,
+				55B246728473080A5C6FD0FC /* ProductUI */,
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		B7D2B627E370F724084A1796 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				9AA03C9744EF2FFEBABA527E /* ItemStateTests.swift */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		DA428E855F2DF24F49C8BF19 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				6978F949E3A48B3D3FB41BFD /* AppDelegate.swift */,
-				BD1A39B1F7DC88D18CB1C44B /* ItemViewController.swift */,
+				6069110753A2DC0C1F3DA76B /* ProductDetailViewController.swift */,
+				76690AB45589E8E468116759 /* ProductDetailViewModel.swift */,
+				31C432D131525F5B8BD998FC /* ProductFixture.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -91,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				E94304F02BECF99704D151B0 /* ModularDemo.app */,
-				423888ED6DFF2D12C25C3FB0 /* ModularDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,24 +74,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2DA63C3C60427D6705B9001 /* ModularDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68841DA8017B41A1DFE6B7BA /* Build configuration list for PBXNativeTarget "ModularDemoTests" */;
-			buildPhases = (
-				B3702E5EC0E2D38DBC62A6E6 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04C4EC16D4DE818933C2E861 /* PBXTargetDependency */,
-			);
-			name = ModularDemoTests;
-			packageProductDependencies = (
-			);
-			productName = ModularDemoTests;
-			productReference = 423888ED6DFF2D12C25C3FB0 /* ModularDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		EBBFD98614503C1A61220D28 /* ModularDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E14F7851215CB620D05FC37 /* Build configuration list for PBXNativeTarget "ModularDemo" */;
@@ -130,9 +87,7 @@
 			);
 			name = ModularDemo;
 			packageProductDependencies = (
-				0980B7DE1D16896BC3E83478 /* Components */,
-				CF753411646B8E5DF917671B /* DataModel */,
-				BB042CFCE7916693FFD7CDB5 /* DevTools */,
+				E4E04A82F6F37BF347F0B7EE /* ProductUI */,
 			);
 			productName = ModularDemo;
 			productReference = E94304F02BECF99704D151B0 /* ModularDemo.app */;
@@ -159,9 +114,7 @@
 			mainGroup = 75838791D0602C499E6352FD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C3C3CAADB6BA8E0DE2BAFE7D /* XCLocalSwiftPackageReference "Packages/Components" */,
-				D3DF9EB804DABD6E80C1D2D8 /* XCLocalSwiftPackageReference "Packages/DataModel" */,
-				31E1CE8110C2139342FA7379 /* XCLocalSwiftPackageReference "Packages/DevTools" */,
+				9F43AD7E1F3D43BEBE76B11E /* XCLocalSwiftPackageReference "Packages/ProductUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E952130B084F821DE4F435C9 /* Products */;
@@ -169,7 +122,6 @@
 			projectRoot = "";
 			targets = (
 				EBBFD98614503C1A61220D28 /* ModularDemo */,
-				C2DA63C3C60427D6705B9001 /* ModularDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,63 +132,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D7EB4341448543556BE122A /* AppDelegate.swift in Sources */,
-				9FC5C25DB76DE1CBD12BC851 /* ItemViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3702E5EC0E2D38DBC62A6E6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2580C23A5E2499F964766460 /* ItemStateTests.swift in Sources */,
+				CD86F9987F77914197A90CD2 /* ProductDetailViewController.swift in Sources */,
+				2164C9AFF3A58BE9585734DC /* ProductDetailViewModel.swift in Sources */,
+				911B5F20DE1E186FEC002A01 /* ProductFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		04C4EC16D4DE818933C2E861 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EBBFD98614503C1A61220D28 /* ModularDemo */;
-			targetProxy = 25F9A56F1936AF5F3E62E41B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		2322F7857D7B947B54B77DAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.example.modular-demo.tests";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularDemo.app/ModularDemo";
-			};
-			name = Release;
-		};
-		4CD338814B04D65D6B61B9F0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.example.modular-demo.tests";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModularDemo.app/ModularDemo";
-			};
-			name = Debug;
-		};
 		658C1E257DBD84C069A22CFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -406,15 +310,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		68841DA8017B41A1DFE6B7BA /* Build configuration list for PBXNativeTarget "ModularDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CD338814B04D65D6B61B9F0 /* Debug */,
-				2322F7857D7B947B54B77DAF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		B34D0A380F412C713FD225A3 /* Build configuration list for PBXProject "ModularDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -427,32 +322,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		31E1CE8110C2139342FA7379 /* XCLocalSwiftPackageReference "Packages/DevTools" */ = {
+		9F43AD7E1F3D43BEBE76B11E /* XCLocalSwiftPackageReference "Packages/ProductUI" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DevTools;
-		};
-		C3C3CAADB6BA8E0DE2BAFE7D /* XCLocalSwiftPackageReference "Packages/Components" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Components;
-		};
-		D3DF9EB804DABD6E80C1D2D8 /* XCLocalSwiftPackageReference "Packages/DataModel" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DataModel;
+			relativePath = Packages/ProductUI;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0980B7DE1D16896BC3E83478 /* Components */ = {
+		E4E04A82F6F37BF347F0B7EE /* ProductUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Components;
-		};
-		BB042CFCE7916693FFD7CDB5 /* DevTools */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DevTools;
-		};
-		CF753411646B8E5DF917671B /* DataModel */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DataModel;
+			productName = ProductUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

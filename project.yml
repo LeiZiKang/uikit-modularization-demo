@@ -3,12 +3,8 @@ options:
   deploymentTarget:
     iOS: '17.0'
 packages:
-  Components:
-    path: Packages/Components
-  DataModel:
-    path: Packages/DataModel
-  DevTools:
-    path: Packages/DevTools
+  ProductUI:
+    path: Packages/ProductUI
 settings:
   base:
     SWIFT_VERSION: '5.0'
@@ -26,23 +22,9 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         TARGETED_DEVICE_FAMILY: '1,2'
     dependencies:
-      - package: Components
-      - package: DataModel
-      - package: DevTools
-  ModularDemoTests:
-    type: bundle.unit-test
-    platform: iOS
-    sources: [Tests]
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: org.example.modular-demo.tests
-        GENERATE_INFOPLIST_FILE: YES
-    dependencies:
-      - target: ModularDemo
+      - package: ProductUI
 schemes:
   ModularDemo:
     build:
       targets:
         ModularDemo: all
-    test:
-      targets: [ModularDemoTests]
